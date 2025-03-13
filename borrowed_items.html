@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory Management System</title>
+    <title>Borrowed Items</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
+     <!-- Sidebar -->
+     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo">Inventory System</div>
             <div class="sidebar-toggle" id="sidebar-toggle">
@@ -38,7 +38,7 @@
             </div>
 
             <!-- Borrowing Management -->
-            <div class="sidebar-menu-item" data-submenu="borrowing">
+            <div class="sidebar-menu-item active" data-submenu="borrowing">
                 <i class="fas fa-handshake"></i>
                 <span>Borrowing Management</span>
                 <i class="fas fa-chevron-right" style="float: right;"></i>
@@ -104,8 +104,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Main Content -->
     <div class="main-content" id="main-content">
         <div class="header">
             <button class="toggle-button" id="toggle-sidebar">
@@ -255,30 +253,7 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <script src="js/sidemenu.js"></script>
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Select all sidebar submenu items
-                            const submenuItems = document.querySelectorAll('.sidebar-submenu-item');
-                    
-                            // Iterate over each item and attach a click event listener
-                            submenuItems.forEach(function(item) {
-                                item.addEventListener('click', function() {
-                                    const page = item.getAttribute('data-page');
-                                    
-                                    // Handle navigation based on the page name
-                                    if (page === 'borrowed-items') {
-                                        window.location.href = 'borrowed_items.html';  
-                                    } else if (page === 'borrow-items') {
-                                        window.location.href = 'borrow_items.html';  
-                                    } else if (page === 'manage-borrowing') {
-                                        window.location.href = 'manage_borrowing.html'; 
-                                    }
-                                });
-                            });
-                        });
-                    </script>
-                    
-                    </body>
-                    </html>
+</body>
+<script src="js/sidemenu.js"></script>
+
+</html>

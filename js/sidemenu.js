@@ -38,6 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 item.classList.add('active');
             });
+
+            // Check if "Borrowing Management" is active on load and expand if necessary
+            if (submenuId === 'borrowing' && item.classList.contains('active')) {
+                submenu.classList.add('active');
+                submenu.style.height = submenu.scrollHeight + 'px';
+            }
         } else {
             // Handle direct links
             const pageId = item.getAttribute('data-page');
@@ -115,5 +121,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth <= 768) {
         sidebar.classList.add('collapsed');
         mainContent.classList.add('expanded');
+    }
+
+    // Automatically expand "Borrowing Management" submenu if it's active by default
+    const borrowingSubmenu = document.getElementById('borrowing-submenu');
+    const borrowingMenuItem = document.querySelector('.sidebar-menu-item[data-submenu="borrowing"]');
+    if (borrowingMenuItem && borrowingMenuItem.classList.contains('active')) {
+        borrowingSubmenu.classList.add('active');
+        borrowingSubmenu.style.height = borrowingSubmenu.scrollHeight + 'px';
     }
 });

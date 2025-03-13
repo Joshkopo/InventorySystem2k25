@@ -18,10 +18,11 @@
         </div>
         <div class="sidebar-menu">
             <!-- Dashboard -->
-            <div class="sidebar-menu-item " data-page="dashboard">
+            <div class="sidebar-menu-item" data-page="dashboard" onclick="location.href='index.html'">
                 <i class="fas fa-tachometer-alt"></i>
                 <span>Dashboard</span>
             </div>
+            
 
             <!-- Inventory Management -->
             <div class="sidebar-menu-item" data-submenu="inventory">
@@ -30,11 +31,9 @@
                 <i class="fas fa-chevron-right" style="float: right;"></i>
             </div>
             <div class="sidebar-submenu" id="inventory-submenu">
-                <div class="sidebar-submenu-item" data-page="view-inventory">View Inventory</div>
-                <div class="sidebar-submenu-item" data-page="add-item">Add New Item</div>
-                <div class="sidebar-submenu-item" data-page="edit-item">Edit Item</div>
-                <div class="sidebar-submenu-item" data-page="delete-item">Delete Item</div>
-                <div class="sidebar-submenu-item" data-page="item-categories">Item Categories</div>
+                <div class="sidebar-submenu-item" data-page="view-inventory" onclick="location.href='view_inventory.php'">View Inventory</div>
+                <div class="sidebar-submenu-item" data-page="stocks">Stocks</div>
+              
             </div>
 
             <!-- Borrowing Management -->
@@ -44,7 +43,7 @@
                 <i class="fas fa-chevron-right" style="float: right;"></i>
             </div>
             <div class="sidebar-submenu" id="borrowing-submenu">
-                <div class="sidebar-submenu-item" data-page="borrowed-items">Borrowed Items</div>
+                <div class="sidebar-submenu-item" data-page="borrowed-items" onclick="location.href='borrowed_items.html'">Borrowed Items</div>
                 <div class="sidebar-submenu-item" data-page="borrow-items">Borrow Items</div>
                 <div class="sidebar-submenu-item" data-page="manage-borrowing">Return Items</div>
                
@@ -112,10 +111,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="header-actions">
-                <div class="header-search">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search...">
-                </div>
+                
                 <div class="header-user">
                     <i class="fas fa-user-circle" style="font-size: 1.5rem;"></i>
                 </div>
@@ -219,66 +215,10 @@
                     </div>
                     
                     <!-- Other pages (initially hidden) -->
-                    <div class="page" id="view-inventory" style="display: none;">
-                        <h1 class="page-title">View Inventory</h1>
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="card-title">Inventory Items</div>
-                            </div>
-                            <div style="overflow-x: auto;">
-                                <table style="width: 100%; border-collapse: collapse;">
-                                    <thead>
-                                        <tr style="background-color: #f8f9fc; border-bottom: 1px solid #e3e6f0;">
-                                            <th style="padding: 0.75rem; text-align: left;">ID</th>
-                                            <th style="padding: 0.75rem; text-align: left;">Item Name</th>
-                                            <th style="padding: 0.75rem; text-align: left;">Category</th>
-                                            <th style="padding: 0.75rem; text-align: left;">Quantity</th>
-                                            <th style="padding: 0.75rem; text-align: left;">Status</th>
-                                            <th style="padding: 0.75rem; text-align: left;">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Table data would be dynamically loaded here -->
-                                        <tr style="border-bottom: 1px solid #e3e6f0;">
-                                            <td style="padding: 0.75rem;">001</td>
-                                            <td style="padding: 0.75rem;">Laptop Dell XPS 15</td>
-                                            <td style="padding: 0.75rem;">Electronics</td>
-                                            <td style="padding: 0.75rem;">10</td>
-                                            <td style="padding: 0.75rem;"><span style="padding: 0.25rem 0.5rem; background-color: #1cc88a; color: white; border-radius: 0.25rem;">Available</span></td>
-                                            <td style="padding: 0.75rem;">
-                                                <button style="background-color: #4e73df; color: white; border: none; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer; margin-right: 0.25rem;"><i class="fas fa-edit"></i></button>
-                                                <button style="background-color: #e74a3b; color: white; border: none; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer;"><i class="fas fa-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    
                     
                     <script src="js/sidemenu.js"></script>
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Select all sidebar submenu items
-                            const submenuItems = document.querySelectorAll('.sidebar-submenu-item');
-                    
-                            // Iterate over each item and attach a click event listener
-                            submenuItems.forEach(function(item) {
-                                item.addEventListener('click', function() {
-                                    const page = item.getAttribute('data-page');
-                                    
-                                    // Handle navigation based on the page name
-                                    if (page === 'borrowed-items') {
-                                        window.location.href = 'borrowed_items.html';  
-                                    } else if (page === 'borrow-items') {
-                                        window.location.href = 'borrow_items.html';  
-                                    } else if (page === 'manage-borrowing') {
-                                        window.location.href = 'manage_borrowing.html'; 
-                                    }
-                                });
-                            });
-                        });
-                    </script>
+                  
                     
                     </body>
                     </html>

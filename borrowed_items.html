@@ -18,10 +18,11 @@
         </div>
         <div class="sidebar-menu">
             <!-- Dashboard -->
-            <div class="sidebar-menu-item " data-page="dashboard">
-                <i class="fas fa-tachometer-alt"></i>
-                <span>Dashboard</span>
-            </div>
+          <div class="sidebar-menu-item" data-page="dashboard" onclick="location.href='index.html'">
+    <i class="fas fa-tachometer-alt"></i>
+    <span>Dashboard</span>
+</div>
+
 
             <!-- Inventory Management -->
             <div class="sidebar-menu-item" data-submenu="inventory">
@@ -30,11 +31,9 @@
                 <i class="fas fa-chevron-right" style="float: right;"></i>
             </div>
             <div class="sidebar-submenu" id="inventory-submenu">
-                <div class="sidebar-submenu-item" data-page="view-inventory">View Inventory</div>
-                <div class="sidebar-submenu-item" data-page="add-item">Add New Item</div>
-                <div class="sidebar-submenu-item" data-page="edit-item">Edit Item</div>
-                <div class="sidebar-submenu-item" data-page="delete-item">Delete Item</div>
-                <div class="sidebar-submenu-item" data-page="item-categories">Item Categories</div>
+                <div class="sidebar-submenu-item" data-page="view-inventory" onclick="location.href='view_inventory.php'">View Inventory</div>
+                <div class="sidebar-submenu-item" data-page="stocks">Stocks</div>
+              
             </div>
 
             <!-- Borrowing Management -->
@@ -44,7 +43,7 @@
                 <i class="fas fa-chevron-right" style="float: right;"></i>
             </div>
             <div class="sidebar-submenu" id="borrowing-submenu">
-                <div class="sidebar-submenu-item" data-page="borrowed-items">Borrowed Items</div>
+                <div class="sidebar-submenu-item " data-page="borrowed-items">Borrowed Items</div>
                 <div class="sidebar-submenu-item" data-page="borrow-items">Borrow Items</div>
                 <div class="sidebar-submenu-item" data-page="manage-borrowing">Return Items</div>
                
@@ -104,155 +103,23 @@
             </div>
         </div>
     </div>
-    <div class="main-content" id="main-content">
-        <div class="header">
-            <button class="toggle-button" id="toggle-sidebar">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="header-actions">
-                <div class="header-search">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search...">
-                </div>
-                <div class="header-user">
-                    <i class="fas fa-user-circle" style="font-size: 1.5rem;"></i>
+        <div class="main-content" id="main-content">
+            <div class="header">
+                <button class="toggle-button" id="toggle-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="header-actions">
+                    
+                    <div class="header-user">
+                        <i class="fas fa-user-circle" style="font-size: 1.5rem;"></i>
+                    </div>
                 </div>
             </div>
+            <div class="content" id="content">
+            </div>  
         </div>
-        <div class="content" id="content">
-            <!-- Dashboard Content -->
-            <div class="page" id="dashboard">
-                <h1 class="page-title">Dashboard</h1>
-                <div class="card-container">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <div class="card-title">Total Items</div>
-                            <div class="card-icon"><i class="fas fa-box"></i></div>
-                        </div>
-                        <div class="card-value">1,250</div>
-                        <div class="card-info">Items in inventory</div>
-                    </div>
-                    <div class="card card-success">
-                        <div class="card-header">
-                            <div class="card-title">Borrowing Requests</div>
-                            <div class="card-icon"><i class="fas fa-handshake"></i></div>
-                        </div>
-                        <div class="card-value">25</div>
-                        <div class="card-info">New requests today</div>
-                    </div>
-                    <div class="card card-warning">
-                        <div class="card-header">
-                            <div class="card-title">Pending Returns</div>
-                            <div class="card-icon"><i class="fas fa-clock"></i></div>
-                        </div>
-                        <div class="card-value">18</div>
-                        <div class="card-info">Items due this week</div>
-                    </div>
-                    <div class="card card-danger">
-                        <div class="card-header">
-                            <div class="card-title">System Alerts</div>
-                            <div class="card-icon"><i class="fas fa-exclamation-triangle"></i></div>
-                        </div>
-                        <div class="card-value">5</div>
-                        <div class="card-info">Low stock and overdue items</div>
-                    </div>
-                    </div>
-                    
-                    <!-- Table for recent activities -->
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">Recent Activities</div>
-                        </div>
-                        <div style="overflow-x: auto;">
-                            <table style="width: 100%; border-collapse: collapse;">
-                                <thead>
-                                    <tr style="background-color: #f8f9fc; border-bottom: 1px solid #e3e6f0;">
-                                        <th style="padding: 0.75rem; text-align: left;">Item</th>
-                                        <th style="padding: 0.75rem; text-align: left;">Action</th>
-                                        <th style="padding: 0.75rem; text-align: left;">User</th>
-                                        <th style="padding: 0.75rem; text-align: left;">Date</th>
-                                        <th style="padding: 0.75rem; text-align: left;">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr style="border-bottom: 1px solid #e3e6f0;">
-                                        <td style="padding: 0.75rem;">Laptop Dell XPS 15</td>
-                                        <td style="padding: 0.75rem;">Borrowed</td>
-                                        <td style="padding: 0.75rem;">John Smith</td>
-                                        <td style="padding: 0.75rem;">Mar 12, 2025</td>
-                                        <td style="padding: 0.75rem;"><span style="padding: 0.25rem 0.5rem; background-color: #1cc88a; color: white; border-radius: 0.25rem;">Active</span></td>
-                                    </tr>
-                                    <tr style="border-bottom: 1px solid #e3e6f0;">
-                                        <td style="padding: 0.75rem;">Projector Sony VPL</td>
-                                        <td style="padding: 0.75rem;">Returned</td>
-                                        <td style="padding: 0.75rem;">Emily Johnson</td>
-                                        <td style="padding: 0.75rem;">Mar 11, 2025</td>
-                                        <td style="padding: 0.75rem;"><span style="padding: 0.25rem 0.5rem; background-color: #4e73df; color: white; border-radius: 0.25rem;">Completed</span></td>
-                                    </tr>
-                                    <tr style="border-bottom: 1px solid #e3e6f0;">
-                                        <td style="padding: 0.75rem;">Conference Room A/V Set</td>
-                                        <td style="padding: 0.75rem;">Borrowed</td>
-                                        <td style="padding: 0.75rem;">Michael Brown</td>
-                                        <td style="padding: 0.75rem;">Mar 10, 2025</td>
-                                        <td style="padding: 0.75rem;"><span style="padding: 0.25rem 0.5rem; background-color: #f6c23e; color: white; border-radius: 0.25rem;">Pending Return</span></td>
-                                    </tr>
-                                    <tr style="border-bottom: 1px solid #e3e6f0;">
-                                        <td style="padding: 0.75rem;">iPad Pro 12.9"</td>
-                                        <td style="padding: 0.75rem;">Borrowed</td>
-                                        <td style="padding: 0.75rem;">Sarah Davis</td>
-                                        <td style="padding: 0.75rem;">Mar 9, 2025</td>
-                                        <td style="padding: 0.75rem;"><span style="padding: 0.25rem 0.5rem; background-color: #e74a3b; color: white; border-radius: 0.25rem;">Overdue</span></td>
-                                    </tr>
-                                    <tr style="border-bottom: 1px solid #e3e6f0;">
-                                        <td style="padding: 0.75rem;">Office Chair Ergonomic</td>
-                                        <td style="padding: 0.75rem;">Added to Inventory</td>
-                                        <td style="padding: 0.75rem;">Admin User</td>
-                                        <td style="padding: 0.75rem;">Mar 8, 2025</td>
-                                        <td style="padding: 0.75rem;"><span style="padding: 0.25rem 0.5rem; background-color: #36b9cc; color: white; border-radius: 0.25rem;">New</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    </div>
-                    
-                    <!-- Other pages (initially hidden) -->
-                    <div class="page" id="view-inventory" style="display: none;">
-                        <h1 class="page-title">View Inventory</h1>
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="card-title">Inventory Items</div>
-                            </div>
-                            <div style="overflow-x: auto;">
-                                <table style="width: 100%; border-collapse: collapse;">
-                                    <thead>
-                                        <tr style="background-color: #f8f9fc; border-bottom: 1px solid #e3e6f0;">
-                                            <th style="padding: 0.75rem; text-align: left;">ID</th>
-                                            <th style="padding: 0.75rem; text-align: left;">Item Name</th>
-                                            <th style="padding: 0.75rem; text-align: left;">Category</th>
-                                            <th style="padding: 0.75rem; text-align: left;">Quantity</th>
-                                            <th style="padding: 0.75rem; text-align: left;">Status</th>
-                                            <th style="padding: 0.75rem; text-align: left;">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Table data would be dynamically loaded here -->
-                                        <tr style="border-bottom: 1px solid #e3e6f0;">
-                                            <td style="padding: 0.75rem;">001</td>
-                                            <td style="padding: 0.75rem;">Laptop Dell XPS 15</td>
-                                            <td style="padding: 0.75rem;">Electronics</td>
-                                            <td style="padding: 0.75rem;">10</td>
-                                            <td style="padding: 0.75rem;"><span style="padding: 0.25rem 0.5rem; background-color: #1cc88a; color: white; border-radius: 0.25rem;">Available</span></td>
-                                            <td style="padding: 0.75rem;">
-                                                <button style="background-color: #4e73df; color: white; border: none; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer; margin-right: 0.25rem;"><i class="fas fa-edit"></i></button>
-                                                <button style="background-color: #e74a3b; color: white; border: none; padding: 0.25rem 0.5rem; border-radius: 0.25rem; cursor: pointer;"><i class="fas fa-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                
+                   
 </body>
 <script src="js/sidemenu.js"></script>
 

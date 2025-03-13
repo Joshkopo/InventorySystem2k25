@@ -90,7 +90,7 @@
             padding-left: 2rem;
             height: 0;
             overflow: hidden;
-            transition: height 0.3s ease;
+            transition: height 0.3s ease-out;
         }
 
         .sidebar-submenu.active {
@@ -254,3 +254,4 @@
                 width: 100%;
             }
         }
+        
